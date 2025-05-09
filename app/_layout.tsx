@@ -1,6 +1,18 @@
-import { Slot } from "expo-router";
 import React from "react";
+import { View, Text, Button } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function Layout () {
-    return  <Slot/>;
+export default function Characteres() {
+  const router = useRouter();
+
+  return (
+    <View>
+      <Text>teste</Text>
+
+      <Button
+        title="personagens"
+        onPress={() => router.push('/characteres')}
+      />
+    </View>
+  );
 }

@@ -1,30 +1,30 @@
-import CustomButton from "@/components/ui/CustomButton";
+import { router } from "expo-router";
 import React, { useState } from "react";
-import { Button, Text, View } from "react-native"; 
+import { Button, Text, View } from "react-native";
 
 export default function HomeScreen() {
-    const [count, SetCount] = useState(0);
-    
-    return (
-        <View>
-            <Text>{count}</Text>
-             <Button 
-             title="Aumentar" 
-             onPress={() => {SetCount(count+1)}}    
-           />
+  const [count, setCount] = useState(0);
 
-            <Button
-             title="Diminuir"
-             onPress={() => {SetCount(count-1)}}
-                
-             />
-            <Button
-             title="Voltar do Zero"
-             onPress={() => {SetCount(count-count)}}
-            />
-            <CustomButton title="teste"/>
-            <CustomButton title="teste1"/>
-            <CustomButton title="teste2"/>
-        </View>
-    );
+  return (
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 20, marginBottom: 10 }}>Contador: {count}</Text>
+
+      <Button
+        title="Personagens"
+        onPress={() => router.push('/characteres')}
+      />
+
+ 
+      <Button
+        title="Aumentar"
+        onPress={() => setCount(count + 1)}
+      />
+
+     
+      <Button
+        title="Diminuir"
+        onPress={() => setCount(count - 1)}
+      />
+    </View>
+  );
 }
